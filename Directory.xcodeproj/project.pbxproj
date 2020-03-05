@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56C6F68D2410D37D00A13D96 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C6F68C2410D37D00A13D96 /* EmployeeModel.swift */; };
 		56CB768424104E0F00DCFFBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB768324104E0F00DCFFBD /* AppDelegate.swift */; };
 		56CB768624104E0F00DCFFBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB768524104E0F00DCFFBD /* SceneDelegate.swift */; };
 		56CB768824104E0F00DCFFBD /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB768724104E0F00DCFFBD /* MainVC.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56C6F68C2410D37D00A13D96 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 		56CB768024104E0F00DCFFBD /* Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Directory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CB768324104E0F00DCFFBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56CB768524104E0F00DCFFBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56C6F68E2410D38500A13D96 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56C6F68C2410D37D00A13D96 /* EmployeeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		56C6F68F2410D3C500A13D96 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				56CB768E24104E1000DCFFBD /* LaunchScreen.storyboard */,
+				56CB768924104E0F00DCFFBD /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		56C6F6902410D3E400A13D96 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				56CB768724104E0F00DCFFBD /* MainVC.swift */,
+				56C6F6912410D3F700A13D96 /* ContactTableVew */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		56C6F6912410D3F700A13D96 /* ContactTableVew */ = {
+			isa = PBXGroup;
+			children = (
+				56CB76B7241068C300DCFFBD /* ContactsDD.swift */,
+				56CB76B52410687E00DCFFBD /* ContactCell.swift */,
+			);
+			path = ContactTableVew;
+			sourceTree = "<group>";
+		};
 		56CB767724104E0F00DCFFBD = {
 			isa = PBXGroup;
 			children = (
@@ -109,12 +146,10 @@
 			children = (
 				56CB768324104E0F00DCFFBD /* AppDelegate.swift */,
 				56CB768524104E0F00DCFFBD /* SceneDelegate.swift */,
-				56CB768E24104E1000DCFFBD /* LaunchScreen.storyboard */,
-				56CB768924104E0F00DCFFBD /* Main.storyboard */,
-				56CB768724104E0F00DCFFBD /* MainVC.swift */,
-				56CB76B7241068C300DCFFBD /* ContactsDD.swift */,
-				56CB76B52410687E00DCFFBD /* ContactCell.swift */,
+				56C6F68F2410D3C500A13D96 /* Storyboards */,
+				56C6F6902410D3E400A13D96 /* VCs */,
 				56CB76B324104E3F00DCFFBD /* Requests.swift */,
+				56C6F68E2410D38500A13D96 /* Models */,
 				56CB76B924106A1200DCFFBD /* Extensions.swift */,
 				56CB768C24104E1000DCFFBD /* Assets.xcassets */,
 				56CB769124104E1000DCFFBD /* Info.plist */,
@@ -274,6 +309,7 @@
 				56CB76B8241068C300DCFFBD /* ContactsDD.swift in Sources */,
 				56CB76B62410687E00DCFFBD /* ContactCell.swift in Sources */,
 				56CB768824104E0F00DCFFBD /* MainVC.swift in Sources */,
+				56C6F68D2410D37D00A13D96 /* EmployeeModel.swift in Sources */,
 				56CB76B424104E3F00DCFFBD /* Requests.swift in Sources */,
 				56CB768424104E0F00DCFFBD /* AppDelegate.swift in Sources */,
 				56CB768624104E0F00DCFFBD /* SceneDelegate.swift in Sources */,
