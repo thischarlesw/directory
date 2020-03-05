@@ -109,6 +109,7 @@
 			children = (
 				56CB768324104E0F00DCFFBD /* AppDelegate.swift */,
 				56CB768524104E0F00DCFFBD /* SceneDelegate.swift */,
+				56CB768E24104E1000DCFFBD /* LaunchScreen.storyboard */,
 				56CB768924104E0F00DCFFBD /* Main.storyboard */,
 				56CB768724104E0F00DCFFBD /* MainVC.swift */,
 				56CB76B7241068C300DCFFBD /* ContactsDD.swift */,
@@ -116,7 +117,6 @@
 				56CB76B324104E3F00DCFFBD /* Requests.swift */,
 				56CB76B924106A1200DCFFBD /* Extensions.swift */,
 				56CB768C24104E1000DCFFBD /* Assets.xcassets */,
-				56CB768E24104E1000DCFFBD /* LaunchScreen.storyboard */,
 				56CB769124104E1000DCFFBD /* Info.plist */,
 			);
 			path = Directory;

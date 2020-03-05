@@ -19,6 +19,7 @@ class MainVC: UIViewController {
 
         segementedSort.setTitle("Name", forSegmentAt: 0)
         segementedSort.setTitle("Team", forSegmentAt: 1)
+        segementedSort.selectedSegmentTintColor = #colorLiteral(red: 0.9946373105, green: 0.3121625185, blue: 0.3781090975, alpha: 1)
 
         contactsDD = ContactsDD(contactsTable)
         contactsDD.refresh()
