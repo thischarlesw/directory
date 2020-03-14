@@ -15,22 +15,42 @@ class Requests {
     let malformed = "https://s3.amazonaws.com/sq-mobile-interview/employees_malformed.json"
     let empty = "https://s3.amazonaws.com/sq-mobile-interview/employees_empty.json"
 
-    func getEmployees(_ urlType: URLType = .employees, _ completion: @escaping ([Employee]) -> Void) {
-        guard let url = URL(string: employees) else { return }
+    func setupCache() {
+        let memoryCap = 500 * 1024 * 1024
+        let diskCap = 500 * 1024 * 1024
+        let urlCache = URLCache(memoryCapacity: memoryCap, diskCapacity: diskCap, diskPath: "myDirectory")
+        URLCache.shared = urlCache
+    }
 
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+    func getEmployees(_ urlType: URLType = .employees, _ completion: @escaping ([Employee]) -> Void) {
+        setupCache()
+        guard let url = URL(string: employees) else { return }
+        let request = URLRequest(url: url)
+
+        if let response = URLCache.shared.cachedResponse(for: request) {
             var employees = [Employee]()
-            guard let data = data else { return }
-            if let employeesJSON = try? JSONDecoder().decode(Employees.self, from: data) {
+            if let employeesJSON = try? JSONDecoder().decode(Employees.self, from: response.data) {
                 employees = employeesJSON.employees
             }
-            if let response = response {
-                let code = (response as! HTTPURLResponse).statusCode
-                print(code)
-            }
+            let code = (response.response as! HTTPURLResponse).statusCode
+            print("Cached", code)
+
             completion(employees)
+        } else {
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                var employees = [Employee]()
+                guard let data = data else { return }
+                if let employeesJSON = try? JSONDecoder().decode(Employees.self, from: data) {
+                    employees = employeesJSON.employees
+                }
+                if let response = response {
+                    let code = (response as! HTTPURLResponse).statusCode
+                    print("Live", code)
+                }
+                completion(employees)
+            }
+            task.resume()
         }
-        task.resume()
     }
     enum URLType {
         case employees
